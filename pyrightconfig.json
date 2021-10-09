@@ -1,12 +1,14 @@
 {
   "venvPath": ".",
   "venv": "venv",
+
   "executionEnvironments": [{ "root": "src" }],
   "include": ["src"],
 
   "pythonPlatform": "Linux",
   "pythonVersion": "3.9.5",
 
+  "reportTypeshedErrors": false,
   "reportMissingImports": true,
   "reportMissingTypeStubs": false
 }
