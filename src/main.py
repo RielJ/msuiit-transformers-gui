@@ -1,14 +1,19 @@
-# import os
+import os
 import sys
 
-from PyQt6.QtWidgets import QApplication
-
-from Window import Window
+#from PySide6.QtWidgets import QApplication, QWidget
+#from PySide6.QtQuick import QQuickView
+from PySide6.QtGui import QGuiApplication
+from PySide6.QtQml import QQmlApplicationEngine
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
+#    app = QApplication(sys.argv)
+#    window = QWidget() 
+    app =  QGuiApplication(sys.argv)
+    engine = QQmlApplicationEngine()
+    engine.load(os.path.join(os.path.dirname(__file__), "main.qml"))
 
-    window = Window()
 
-    window.show()
-    sys.exit(app.exec())
+    if not engine.rootObjects():
+        sys.exit(-1)
+    sys.exit(app.exec_())
