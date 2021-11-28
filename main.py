@@ -66,6 +66,17 @@ class TransformerApp(ui_interface.Ui_MainWindow, QtWidgets.QMainWindow):
         self.actionExit.setShortcut("Ctrl+Q")
         self.actionExit.setStatusTip("Exit application")
         self.actionExit.triggered.connect(QtWidgets.QApplication.quit)
+        self.class_0.stateChanged.connect(lambda: self.checkbox_onchange())
+        self.class_1.stateChanged.connect(lambda: self.checkbox_onchange())
+        self.class_2.stateChanged.connect(lambda: self.checkbox_onchange())
+        self.class_3.stateChanged.connect(lambda: self.checkbox_onchange())
+        self.class_4.stateChanged.connect(lambda: self.checkbox_onchange())
+        self.class_5.stateChanged.connect(lambda: self.checkbox_onchange())
+
+    def checkbox_onchange(self):
+        self.classes = [
+            idx for idx, val in enumerate(self.class_checkboxes) if val.isChecked()
+        ]
 
     def mode_input_changed(self, mode_name):
         if mode_name == "Camera":
