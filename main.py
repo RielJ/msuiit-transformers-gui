@@ -195,8 +195,8 @@ class TransformerApp(ui_interface.Ui_MainWindow, QtWidgets.QMainWindow):
             else:
                 self.out = cv2.VideoWriter(
                     "prediction.avi",
-                    cv2.VideoWriter_fourcc(*"MJPG"),
-                    20,
+                    cv2.VideoWriter_fourcc(*"mp4v"),
+                    30,
                     (int(self.cap.get(3)), int(self.cap.get(4))),
                 )
                 self.timer_video.start(60)
@@ -293,7 +293,7 @@ class TransformerApp(ui_interface.Ui_MainWindow, QtWidgets.QMainWindow):
             self.statusBar.showMessage(f"Reading Video")
             flag = self.cap.open(self.video_name)
             self.out = cv2.VideoWriter(
-                "results/result.avi",
+                "result.avi",
                 cv2.VideoWriter_fourcc(*"mp4v"),
                 30,
                 (int(self.cap.get(3)), int(self.cap.get(4))),
