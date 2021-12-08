@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1198, 862)
+        MainWindow.resize(1290, 862)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("")
         self.centralwidget.setObjectName("centralwidget")
@@ -33,15 +33,16 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.label_header.setFont(font)
-        self.label_header.setStyleSheet(
-            "color: rgb(245, 247, 250);\n" "font-weight: bold;\n" ""
-        )
+        self.label_header.setStyleSheet("color: rgb(245, 247, 250);\n"
+"font-weight: bold;\n"
+"")
         self.label_header.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_header.setObjectName("label_header")
         self.gridLayout_6.addWidget(self.label_header, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.header_frame, 0, 0, 1, 1)
         self.main_frame = QtWidgets.QFrame(self.centralwidget)
-        self.main_frame.setStyleSheet("background-color: #12232E;\n" "color: white;")
+        self.main_frame.setStyleSheet("background-color: #12232E;\n"
+"color: white;")
         self.main_frame.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
         self.main_frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.main_frame.setObjectName("main_frame")
@@ -50,10 +51,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_5 = QtWidgets.QVBoxLayout()
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.output_frame = QtWidgets.QFrame(self.main_frame)
-        sizePolicy = QtWidgets.QSizePolicy(
-            QtWidgets.QSizePolicy.Policy.Preferred,
-            QtWidgets.QSizePolicy.Policy.Expanding,
-        )
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.output_frame.sizePolicy().hasHeightForWidth())
@@ -74,21 +72,15 @@ class Ui_MainWindow(object):
         self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Plain)
         self.frame.setObjectName("frame")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame)
-        self.horizontalLayout_3.setSizeConstraint(
-            QtWidgets.QLayout.SizeConstraint.SetDefaultConstraint
-        )
+        self.horizontalLayout_3.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetDefaultConstraint)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        spacerItem = QtWidgets.QSpacerItem(
-            40,
-            20,
-            QtWidgets.QSizePolicy.Policy.Expanding,
-            QtWidgets.QSizePolicy.Policy.Minimum,
-        )
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem)
         self.before_button = QtWidgets.QPushButton(self.frame)
         font = QtGui.QFont()
         font.setPointSize(11)
         self.before_button.setFont(font)
+        self.before_button.setStyleSheet("background-color: #177CC1;")
         self.before_button.setCheckable(True)
         self.before_button.setChecked(True)
         self.before_button.setObjectName("before_button")
@@ -97,19 +89,13 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(11)
         self.after_button.setFont(font)
+        self.after_button.setStyleSheet("background-color: #177CC1;")
         self.after_button.setCheckable(True)
         self.after_button.setObjectName("after_button")
         self.horizontalLayout_3.addWidget(self.after_button)
-        spacerItem1 = QtWidgets.QSpacerItem(
-            40,
-            20,
-            QtWidgets.QSizePolicy.Policy.Expanding,
-            QtWidgets.QSizePolicy.Policy.Minimum,
-        )
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem1)
-        self.gridLayout_2.addWidget(
-            self.frame, 1, 0, 1, 1, QtCore.Qt.AlignmentFlag.AlignTop
-        )
+        self.gridLayout_2.addWidget(self.frame, 1, 0, 1, 1, QtCore.Qt.AlignmentFlag.AlignTop)
         self.verticalLayout_5.addWidget(self.output_frame)
         self.verticalLayout_5.setStretch(0, 4)
         self.gridLayout_4.addLayout(self.verticalLayout_5, 0, 0, 1, 1)
@@ -122,12 +108,7 @@ class Ui_MainWindow(object):
         self.form_frame.setObjectName("form_frame")
         self.gridLayout_3 = QtWidgets.QGridLayout(self.form_frame)
         self.gridLayout_3.setObjectName("gridLayout_3")
-        spacerItem2 = QtWidgets.QSpacerItem(
-            20,
-            40,
-            QtWidgets.QSizePolicy.Policy.Minimum,
-            QtWidgets.QSizePolicy.Policy.Expanding,
-        )
+        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.gridLayout_3.addItem(spacerItem2, 10, 0, 1, 1)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
@@ -285,23 +266,21 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.class_5.setFont(font)
-        self.class_5.setStyleSheet(
-            "::indicator {\n"
-            "    border: 1px solid grey;\n"
-            "    background-color: #fff;\n"
-            "}\n"
-            "\n"
-            "::indicator:checked {\n"
-            '    image: url("assets/checked.png");\n'
-            "    height: 1em;\n"
-            "    width: 1em;\n"
-            "}\n"
-            "::indicator:unchecked {\n"
-            '    image: url("assets/unchecked.png");\n'
-            "    height: 1em;\n"
-            "    width: 1em;\n"
-            "}"
-        )
+        self.class_5.setStyleSheet("::indicator {\n"
+"    border: 1px solid grey;\n"
+"    background-color: #fff;\n"
+"}\n"
+"\n"
+"::indicator:checked {\n"
+"    image: url(\"assets/checked.png\");\n"
+"    height: 1em;\n"
+"    width: 1em;\n"
+"}\n"
+"::indicator:unchecked {\n"
+"    image: url(\"assets/unchecked.png\");\n"
+"    height: 1em;\n"
+"    width: 1em;\n"
+"}")
         self.class_5.setChecked(True)
         self.class_5.setObjectName("class_5")
         self.gridLayout_7.addWidget(self.class_5, 6, 0, 1, 1)
@@ -313,23 +292,21 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.class_4.setFont(font)
-        self.class_4.setStyleSheet(
-            "::indicator {\n"
-            "    border: 1px solid grey;\n"
-            "    background-color: #fff;\n"
-            "}\n"
-            "\n"
-            "::indicator:checked {\n"
-            '    image: url("assets/checked.png");\n'
-            "    height: 1em;\n"
-            "    width: 1em;\n"
-            "}\n"
-            "::indicator:unchecked {\n"
-            '    image: url("assets/unchecked.png");\n'
-            "    height: 1em;\n"
-            "    width: 1em;\n"
-            "}"
-        )
+        self.class_4.setStyleSheet("::indicator {\n"
+"    border: 1px solid grey;\n"
+"    background-color: #fff;\n"
+"}\n"
+"\n"
+"::indicator:checked {\n"
+"    image: url(\"assets/checked.png\");\n"
+"    height: 1em;\n"
+"    width: 1em;\n"
+"}\n"
+"::indicator:unchecked {\n"
+"    image: url(\"assets/unchecked.png\");\n"
+"    height: 1em;\n"
+"    width: 1em;\n"
+"}")
         self.class_4.setChecked(True)
         self.class_4.setObjectName("class_4")
         self.gridLayout_7.addWidget(self.class_4, 5, 0, 1, 1)
@@ -337,23 +314,21 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.class_3.setFont(font)
-        self.class_3.setStyleSheet(
-            "::indicator {\n"
-            "    border: 1px solid grey;\n"
-            "    background-color: #fff;\n"
-            "}\n"
-            "\n"
-            "::indicator:checked {\n"
-            '    image: url("assets/checked.png");\n'
-            "    height: 1em;\n"
-            "    width: 1em;\n"
-            "}\n"
-            "::indicator:unchecked {\n"
-            '    image: url("assets/unchecked.png");\n'
-            "    height: 1em;\n"
-            "    width: 1em;\n"
-            "}"
-        )
+        self.class_3.setStyleSheet("::indicator {\n"
+"    border: 1px solid grey;\n"
+"    background-color: #fff;\n"
+"}\n"
+"\n"
+"::indicator:checked {\n"
+"    image: url(\"assets/checked.png\");\n"
+"    height: 1em;\n"
+"    width: 1em;\n"
+"}\n"
+"::indicator:unchecked {\n"
+"    image: url(\"assets/unchecked.png\");\n"
+"    height: 1em;\n"
+"    width: 1em;\n"
+"}")
         self.class_3.setChecked(True)
         self.class_3.setObjectName("class_3")
         self.gridLayout_7.addWidget(self.class_3, 4, 0, 1, 1)
@@ -361,23 +336,21 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.class_2.setFont(font)
-        self.class_2.setStyleSheet(
-            "::indicator {\n"
-            "    border: 1px solid grey;\n"
-            "    background-color: #fff;\n"
-            "}\n"
-            "\n"
-            "::indicator:checked {\n"
-            '    image: url("assets/checked.png");\n'
-            "    height: 1em;\n"
-            "    width: 1em;\n"
-            "}\n"
-            "::indicator:unchecked {\n"
-            '    image: url("assets/unchecked.png");\n'
-            "    height: 1em;\n"
-            "    width: 1em;\n"
-            "}"
-        )
+        self.class_2.setStyleSheet("::indicator {\n"
+"    border: 1px solid grey;\n"
+"    background-color: #fff;\n"
+"}\n"
+"\n"
+"::indicator:checked {\n"
+"    image: url(\"assets/checked.png\");\n"
+"    height: 1em;\n"
+"    width: 1em;\n"
+"}\n"
+"::indicator:unchecked {\n"
+"    image: url(\"assets/unchecked.png\");\n"
+"    height: 1em;\n"
+"    width: 1em;\n"
+"}")
         self.class_2.setChecked(True)
         self.class_2.setObjectName("class_2")
         self.gridLayout_7.addWidget(self.class_2, 3, 0, 1, 1)
@@ -389,23 +362,21 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.class_0.setFont(font)
-        self.class_0.setStyleSheet(
-            "::indicator {\n"
-            "    border: 1px solid grey;\n"
-            "    background-color: #fff;\n"
-            "}\n"
-            "\n"
-            "::indicator:checked {\n"
-            '    image: url("assets/checked.png");\n'
-            "    height: 1em;\n"
-            "    width: 1em;\n"
-            "}\n"
-            "::indicator:unchecked {\n"
-            '    image: url("assets/unchecked.png");\n'
-            "    height: 1em;\n"
-            "    width: 1em;\n"
-            "}"
-        )
+        self.class_0.setStyleSheet("::indicator {\n"
+"    border: 1px solid grey;\n"
+"    background-color: #fff;\n"
+"}\n"
+"\n"
+"::indicator:checked {\n"
+"    image: url(\"assets/checked.png\");\n"
+"    height: 1em;\n"
+"    width: 1em;\n"
+"}\n"
+"::indicator:unchecked {\n"
+"    image: url(\"assets/unchecked.png\");\n"
+"    height: 1em;\n"
+"    width: 1em;\n"
+"}")
         self.class_0.setChecked(True)
         self.class_0.setObjectName("class_0")
         self.gridLayout_7.addWidget(self.class_0, 0, 0, 1, 1)
@@ -417,23 +388,21 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.class_1.setFont(font)
-        self.class_1.setStyleSheet(
-            "::indicator {\n"
-            "    border: 1px solid grey;\n"
-            "    background-color: #fff;\n"
-            "}\n"
-            "\n"
-            "::indicator:checked {\n"
-            '    image: url("assets/checked.png");\n'
-            "    height: 1em;\n"
-            "    width: 1em;\n"
-            "}\n"
-            "::indicator:unchecked {\n"
-            '    image: url("assets/unchecked.png");\n'
-            "    height: 1em;\n"
-            "    width: 1em;\n"
-            "}"
-        )
+        self.class_1.setStyleSheet("::indicator {\n"
+"    border: 1px solid grey;\n"
+"    background-color: #fff;\n"
+"}\n"
+"\n"
+"::indicator:checked {\n"
+"    image: url(\"assets/checked.png\");\n"
+"    height: 1em;\n"
+"    width: 1em;\n"
+"}\n"
+"::indicator:unchecked {\n"
+"    image: url(\"assets/unchecked.png\");\n"
+"    height: 1em;\n"
+"    width: 1em;\n"
+"}")
         self.class_1.setChecked(True)
         self.class_1.setObjectName("class_1")
         self.gridLayout_7.addWidget(self.class_1, 2, 0, 1, 1)
@@ -453,10 +422,12 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.main_frame, 1, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1198, 20))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1290, 26))
         self.menubar.setObjectName("menubar")
         self.menuMain = QtWidgets.QMenu(self.menubar)
         self.menuMain.setObjectName("menuMain")
+        self.menuHelp = QtWidgets.QMenu(self.menubar)
+        self.menuHelp.setObjectName("menuHelp")
         MainWindow.setMenuBar(self.menubar)
         self.statusBar = QtWidgets.QStatusBar(MainWindow)
         self.statusBar.setObjectName("statusBar")
@@ -465,6 +436,7 @@ class Ui_MainWindow(object):
         self.actionExit.setObjectName("actionExit")
         self.menuMain.addAction(self.actionExit)
         self.menubar.addAction(self.menuMain.menuAction())
+        self.menubar.addAction(self.menuHelp.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -472,9 +444,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_header.setText(
-            _translate("MainWindow", "DISTRIBUTION LINE DETECTION")
-        )
+        self.label_header.setText(_translate("MainWindow", "DISTRIBUTION LINE DETECTION"))
         self.before_button.setText(_translate("MainWindow", "Before"))
         self.after_button.setText(_translate("MainWindow", "After"))
         self.label_2.setText(_translate("MainWindow", "Components"))
@@ -491,7 +461,7 @@ class Ui_MainWindow(object):
         self.input_mode.setItemText(0, _translate("MainWindow", "Camera"))
         self.input_mode.setItemText(1, _translate("MainWindow", "Image"))
         self.input_mode.setItemText(2, _translate("MainWindow", "Video"))
-        self.label_import.setText(_translate("MainWindow", "Import"))
+        self.label_import.setText(_translate("MainWindow", "Import File"))
         self.occ_class_5.setText(_translate("MainWindow", "0"))
         self.class_5.setText(_translate("MainWindow", "Output Fuse"))
         self.occ_class_3.setText(_translate("MainWindow", "0"))
@@ -505,4 +475,5 @@ class Ui_MainWindow(object):
         self.occ_class_0.setText(_translate("MainWindow", "0"))
         self.occ_class_2.setText(_translate("MainWindow", "0"))
         self.menuMain.setTitle(_translate("MainWindow", "Main"))
+        self.menuHelp.setTitle(_translate("MainWindow", "Help"))
         self.actionExit.setText(_translate("MainWindow", "Quit"))

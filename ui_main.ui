@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1198</width>
+    <width>1290</width>
     <height>862</height>
    </rect>
   </property>
@@ -148,6 +148,9 @@ color: white;</string>
                    <pointsize>11</pointsize>
                   </font>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: #177CC1;</string>
+                 </property>
                  <property name="text">
                   <string>Before</string>
                  </property>
@@ -165,6 +168,9 @@ color: white;</string>
                   <font>
                    <pointsize>11</pointsize>
                   </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: #177CC1;</string>
                  </property>
                  <property name="text">
                   <string>After</string>
@@ -462,7 +468,7 @@ color: white;</string>
                  </font>
                 </property>
                 <property name="text">
-                 <string>Import</string>
+                 <string>Import File</string>
                 </property>
                </widget>
               </item>
@@ -775,8 +781,8 @@ color: white;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1198</width>
-     <height>20</height>
+     <width>1290</width>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMain">
@@ -785,7 +791,13 @@ color: white;</string>
     </property>
     <addaction name="actionExit"/>
    </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+   </widget>
    <addaction name="menuMain"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionExit">
