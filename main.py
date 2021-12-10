@@ -356,16 +356,17 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
             with torch.no_grad():
                 dt = [0.0, 0.0, 0.0]
                 t1 = time_sync()
-                img = letterbox(img, new_shape=self.img_size)[0]
-                # Convert
-                img = img[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB, to 3x416x416
+                img = letterbox(img, new_shape=self.img_size, stride=stride)[0]
+
+                img = img.transpose((2, 0, 1))[::-1]  # HWC to CHW, BGR to RGB
                 img = np.ascontiguousarray(img)
+
                 img = torch.from_numpy(img).to(self.device)
                 img = img.half() if self.half else img.float()  # uint8 to fp16/32
                 # img = img.float()
                 img /= 255.0  # 0 - 255 to 0.0 - 1.0
-                if img.ndimension() == 3:
-                    img = img.unsqueeze(0)
+                if len(img.shape) == 3:
+                    img = img[None]  # expand for batch dim
                 # Inference
                 t2 = time_sync()
                 dt[0] += t2 - t1
@@ -431,19 +432,24 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
                     buttons=QtWidgets.QMessageBox.StandardButton.Ok,
                     defaultButton=QtWidgets.QMessageBox.StandardButton.Ok,
                 )
+                self.detect_button.setHidden(False)
                 return
             self.pause_button.setHidden(False)
             self.stop_button.setHidden(False)
             flag = self.cap.open(self.video_name)
+            fps = max(self.cap.get(cv2.CAP_PROP_FPS) % 100, 0) or 30.0
+            w = int(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+            h = int(self.cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
             self.out = cv2.VideoWriter(
                 "result.avi",
                 cv2.VideoWriter_fourcc(*"mp4v"),
-                30,
-                (int(self.cap.get(3)), int(self.cap.get(4))),
+                fps,
+                (w, h),
             )
             self.timer_video.start(60)
 
     def show_video_frame(self):
+        mode = self.input_mode.currentText()
         name_list = []
 
         flag, img = self.cap.read()
@@ -452,26 +458,30 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
             with torch.no_grad():
                 dt = [0.0, 0.0, 0.0]
                 t1 = time_sync()
-                img = letterbox(img, new_shape=self.img_size)[0]
                 # Convert
-                img = img[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB, to 3x416x416
+                # if mode == "Video":
+                img = letterbox(img, new_shape=self.img_size)[0]
+                img = img.transpose((2, 0, 1))[::-1]  # HWC to CHW, BGR to RGB
+                # else:
+                #     img = letterbox(img, new_shape=self.img_size)[0]
+                #     # img = np.stack(img, 0)
+                #     # Convert
+                #     img = img[::-1].transpose((0, 3, 1, 2))  # BGR to RGB, BHWC to BCHW
+
                 img = np.ascontiguousarray(img)
+
                 img = torch.from_numpy(img).to(self.device)
                 img = img.half() if self.half else img.float()  # uint8 to fp16/32
-                # img = img.float()
-                img /= 255.0  # 0 - 255 to 0.0 - 1.0
-                if img.ndimension() == 3:
-                    img = img.unsqueeze(0)
+                img /= 255  # 0 - 255 to 0.0 - 1.0
+                if len(img.shape) == 3:
+                    img = img[None]  # expand for batch dim
+
+                # if img.ndimension() == 3:
+                #     img = img.unsqueeze(0)
                 # Inference
                 t2 = time_sync()
                 dt[0] += t2 - t1
-                try:
-                    pred = self.model(img, augment=self.augment)
-                except:
-                    pred = None
-                if pred == None:
-                    self.statusBar.showMessage("Error Using model!")
-                    return
+                pred = self.model(img, augment=self.augment)
 
                 t3 = time_sync()
                 dt[1] += t3 - t2
