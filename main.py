@@ -147,8 +147,14 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
         self.input_image.setPixmap(QtGui.QPixmap.fromImage(self.QtImg))
 
     def on_cancel(self):
+        mode = self.input_mode.currentText()
         self.input_image.clear()
-        self.input_image.setPixmap(QtGui.QPixmap.fromImage(self.background_image))
+        if mode == "Image" and self.img_name:
+            _preview_image = cv2.imread(self.img_name)
+            resized_image = self.resize_img(_preview_image)
+            self.input_image.setPixmap(resized_image)
+        else:
+            self.input_image.setPixmap(QtGui.QPixmap.fromImage(self.background_image))
         self.hide_all_buttons()
         self.reset_occurences()
         self.detect_button.setHidden(False)
@@ -346,6 +352,7 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
                     buttons=QtWidgets.QMessageBox.StandardButton.Ok,
                     defaultButton=QtWidgets.QMessageBox.StandardButton.Ok,
                 )
+                self.detect_button.setHidden(False)
                 return
             self.save_button.setHidden(False)
             self.cancel_button.setHidden(False)
@@ -386,7 +393,9 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
                 dt[2] += time_sync() - t3
                 # Process detections
 
-                self.statusBar.showMessage(f"Average FPS Detected %.1fms" % (t3 - t2))
+                self.statusBar.showMessage(
+                    f"Total Detection Time %.1fms" % (sum(dt) * 1e3)
+                )
                 self.statusBar.repaint()
                 annotator = Annotator(showimg, line_width=3, example=str(self.names))
                 for i, det in enumerate(pred):  # detections per image
@@ -423,6 +432,7 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
                 self.result.shape[0],
                 QtGui.QImage.Format.Format_RGB32,
             )
+            self.on_after()
         else:
             if not self.input_import.text().endswith(tuple(VID_FORMATS)):
                 QtWidgets.QMessageBox.warning(
