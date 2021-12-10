@@ -7,6 +7,7 @@ import cv2
 import numpy as np
 import torch
 from PyQt6 import QtCore, QtGui, QtWidgets
+from torch.backends import cudnn
 
 import ui_main
 from models.common import DetectMultiBackend
@@ -316,6 +317,7 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
         ]
         self.hide_all_buttons()
         if mode == "Camera":
+            cudnn.benchmark = True
             flag = self.cap.open(0)
             if flag == False:
                 QtWidgets.QMessageBox.warning(
