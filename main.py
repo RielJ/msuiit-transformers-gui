@@ -461,7 +461,9 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
     def show_video_frame(self):
         mode = self.input_mode.currentText()
         name_list = []
-
+        self.statusBar.showMessage(
+                    "Dectection Complete"
+                )
         flag, img = self.cap.read()
         if img is not None:
             showimg = img

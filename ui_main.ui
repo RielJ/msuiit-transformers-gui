@@ -795,6 +795,8 @@ color: white;</string>
     <property name="title">
      <string>Help</string>
     </property>
+    <addaction name="actionTutorial"/>
+    <addaction name="actionAbout"/>
    </widget>
    <addaction name="menuMain"/>
    <addaction name="menuHelp"/>
@@ -803,6 +805,16 @@ color: white;</string>
   <action name="actionExit">
    <property name="text">
     <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionTutorial">
+   <property name="text">
+    <string>Tutorial</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
    </property>
   </action>
  </widget>
