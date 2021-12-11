@@ -459,12 +459,10 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
             self.timer_video.start(60)
 
     def show_video_frame(self):
-        mode = self.input_mode.currentText()
         name_list = []
-        self.statusBar.showMessage(
-                    "Dectection Complete"
-                )
         flag, img = self.cap.read()
+        if not flag:
+            self.statusBar.showMessage("Dectection Complete")
         if img is not None:
             showimg = img
             with torch.no_grad():
@@ -513,14 +511,14 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
                 self.statusBar.repaint()
                 # Process detections
                 annotator = Annotator(showimg, line_width=3, example=str(self.names))
-                for i, det in enumerate(pred):  # detections per image
+                for det in pred:  # detections per image
                     if det is not None and len(det):
                         # Rescale boxes from img_size to im0 size
                         det[:, :4] = scale_coords(
                             img.shape[2:], det[:, :4], showimg.shape
                         ).round()
                         # Write results
-                        for idx, c in enumerate(det[:, -1].unique()):
+                        for c in det[:, -1].unique():
                             n = (det[:, -1] == c).sum()  # detections per class
                             s = f"{n} {self.names[int(c)]}{'s' * (n > 1)}, "  # add to string
                             # self.class_occurences[
