@@ -10,6 +10,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 from torch.backends import cudnn
 
 import ui_main
+from ui_tutorial import Ui_TutorialWindow
 from models.common import DetectMultiBackend
 from utils.augmentations import letterbox
 from utils.datasets import IMG_FORMATS, VID_FORMATS
@@ -92,6 +93,8 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
         self.actionExit.setShortcut("Ctrl+Q")
         self.actionExit.setStatusTip("Exit application")
         self.actionExit.triggered.connect(QtWidgets.QApplication.quit)
+        self.actionTutorial.triggered.connect(self.help_application)
+        self.actionAbout.triggered.connect(self.about_application)
         self.class_0.stateChanged.connect(lambda: self.checkbox_onchange())
         self.class_1.stateChanged.connect(lambda: self.checkbox_onchange())
         self.class_2.stateChanged.connect(lambda: self.checkbox_onchange())
@@ -99,6 +102,17 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
         self.class_4.stateChanged.connect(lambda: self.checkbox_onchange())
         self.class_5.stateChanged.connect(lambda: self.checkbox_onchange())
 
+    def help_application(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_TutorialWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+
+    def about_application(self):
+        title = "<b>About Distribution Line Detection</b><p>A GUI application for Distribution Line Detection. It Detects Powerline, Components (Transformer tank, HV Bushing, LV Bushing, Arrester, Radiator fins and Cutout fuse) and Obstuctions on a distribution line.</p>"
+        QtWidgets.QMessageBox.about(self, "About", title)
+       
     def hide_all_buttons(self):
         self.cancel_button.setHidden(True)
         self.before_button.setHidden(True)

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TutorialWindow</class>
+ <widget class="QMainWindow" name="TutorialWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Tutorials</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabTutorial">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>761</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::North</enum>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Rounded</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="usesScrollButtons">
+     <bool>true</bool>
+    </property>
+    <property name="documentMode">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Camera Mode</string>
+     </attribute>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QTextBrowser" name="textBrowser_2">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="lineWidth">
+         <number>0</number>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Follow the steps below:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; font-size:16px; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Select &lt;span style=&quot; font-weight:600;&quot;&gt;Camera&lt;/span&gt; on the &lt;span style=&quot; font-weight:600;&quot;&gt;Mode&lt;/span&gt; dropdown menu.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Select what type of detection needed on &lt;span style=&quot; font-weight:600;&quot;&gt;Detection Type&lt;/span&gt; dropdown menu.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Select the desired detection model to use for detection on &lt;span style=&quot; font-weight:600;&quot;&gt;Detection Model&lt;/span&gt; dropdown menu.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;When &lt;span style=&quot; font-weight:600;&quot;&gt;Component &lt;/span&gt;is selected the Detection type, a checklist of components is presented. &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;  Checked the desired component to detect.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Detect Button &lt;/span&gt;to start the detection process. It automatically opens your camera device and will start recording the session.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Pause Button &lt;/span&gt;to temporarily holdup the session.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Resume Button &lt;/span&gt;to continue the session.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Stop Button &lt;/span&gt;to end the session.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Save Button &lt;/span&gt;to keep the recorded session with detected objects bounded by boxes on preferred folder.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Cancel Button &lt;/span&gt;to disregard the recorded session.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Notes:&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Input Formats: &lt;/span&gt;from camera device&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Output Format: &lt;/span&gt;.AVI&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Image Mode</string>
+     </attribute>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QTextBrowser" name="textBrowser_3">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="lineWidth">
+         <number>0</number>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Follow the steps below:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; font-size:16px; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Select&lt;span style=&quot; font-weight:600;&quot;&gt; Image&lt;/span&gt; on the &lt;span style=&quot; font-weight:600;&quot;&gt;Mode&lt;/span&gt; dropdown menu.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Folder Icon&lt;/span&gt; to &lt;span style=&quot; font-weight:600;&quot;&gt;Import &lt;/span&gt;an image file.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Select what type of detection needed on &lt;span style=&quot; font-weight:600;&quot;&gt;Detection Type&lt;/span&gt; dropdown menu.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Select the desired detection model to use for detection on &lt;span style=&quot; font-weight:600;&quot;&gt;Detection Model&lt;/span&gt; dropdown menu.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;When &lt;span style=&quot; font-weight:600;&quot;&gt;Component &lt;/span&gt;is selected the Detection type, a checklist of components is presented. &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;  Checked the desired component to detect.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Detect Button &lt;/span&gt;to start the detection process. It automatically show you the output image with detected objects bounded by boxes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Before Button &lt;/span&gt;to view the input image.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;After Button &lt;/span&gt;to view the output image&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Save Button &lt;/span&gt;to keep the output image on preferred folder.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Cancel Button &lt;/span&gt;to disregard the output image.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Notes:&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Input Format: &lt;/span&gt;.jpg, .jpeg, and .png&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Output Format: &lt;/span&gt;.jpg&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Video Mode</string>
+     </attribute>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QTextBrowser" name="textBrowser_4">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="lineWidth">
+         <number>0</number>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Follow the steps below:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; font-size:16px; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Select &lt;span style=&quot; font-weight:600;&quot;&gt;Video&lt;/span&gt; on the &lt;span style=&quot; font-weight:600;&quot;&gt;Mode&lt;/span&gt; dropdown menu.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Folder Icon&lt;/span&gt; to &lt;span style=&quot; font-weight:600;&quot;&gt;Import &lt;/span&gt;a video file.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Select what type of detection needed on &lt;span style=&quot; font-weight:600;&quot;&gt;Detection Type&lt;/span&gt; dropdown menu.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Select the desired detection model to use for detection on &lt;span style=&quot; font-weight:600;&quot;&gt;Detection Model&lt;/span&gt; dropdown menu.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;When &lt;span style=&quot; font-weight:600;&quot;&gt;Component &lt;/span&gt;is selected the Detection type, a checklist of components is presented. &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;  Checked the desired component to detect.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Detect Button &lt;/span&gt;to start the detection process.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Pause Button &lt;/span&gt;to temporarily holdup the session.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Resume Button &lt;/span&gt;to continue the session.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Stop Button &lt;/span&gt;to end the session without processing the whole video.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;The &lt;span style=&quot; font-weight:600;&quot;&gt;Statust Bar &lt;/span&gt;on the lower left corner of the GUI will prompt &lt;span style=&quot; font-weight:600;&quot;&gt;&amp;quot;Detection Complete&amp;quot;&lt;/span&gt; if the whole was done with the detection process.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Save Button &lt;/span&gt;to keep the output video with detected objects bounded by boxes on preferred folder.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'HelveticaNeue-Light,-apple-system,AppleSDGothicNeo-Regular,lucida grande,tahoma,verdana,arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,NotoColorEmoji,EmojiSymbols,Symbola,Noto,Android Emoji,AndroidEmoji,Arial Unicode MS,Zapf Dingbats,AppleColorEmoji,Apple Color Emoji'; color:#4c4c4c; background-color:#ffffff;&quot;&gt;• &lt;/span&gt;Click the &lt;span style=&quot; font-weight:600;&quot;&gt;Cancel Button &lt;/span&gt;to disregard the output video.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Notes:&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Input Formats: &lt;/span&gt;.mp4 and .AVI&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Output Format: &lt;/span&gt;.AVI&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

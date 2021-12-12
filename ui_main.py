@@ -483,5 +483,5 @@ class Ui_MainWindow(object):
         self.menuMain.setTitle(_translate("MainWindow", "Main"))
         self.menuHelp.setTitle(_translate("MainWindow", "Help"))
         self.actionExit.setText(_translate("MainWindow", "Quit"))
-        self.actionTutorial.setText(_translate("MainWindow", "Tutorial"))
+        self.actionTutorial.setText(_translate("MainWindow", "Tutorials"))
         self.actionAbout.setText(_translate("MainWindow", "About"))
