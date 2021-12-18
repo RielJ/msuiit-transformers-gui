@@ -10,8 +10,8 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 from torch.backends import cudnn
 
 import ui_main
-from ui_tutorial import Ui_TutorialWindow
 from models.common import DetectMultiBackend
+from ui_tutorial import Ui_TutorialWindow
 from utils.augmentations import letterbox
 from utils.datasets import IMG_FORMATS, VID_FORMATS
 from utils.general import check_img_size, non_max_suppression, scale_coords
@@ -108,11 +108,10 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
         self.ui.setupUi(self.window)
         self.window.show()
 
-
     def about_application(self):
         title = "<b>About Distribution Line Detection</b><p>A GUI application for Distribution Line Detection. It Detects Powerline, Components (Transformer tank, HV Bushing, LV Bushing, Arrester, Radiator fins and Cutout fuse) and Obstuctions on a distribution line.</p>"
         QtWidgets.QMessageBox.about(self, "About", title)
-       
+
     def hide_all_buttons(self):
         self.cancel_button.setHidden(True)
         self.before_button.setHidden(True)
@@ -461,6 +460,8 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
             self.pause_button.setHidden(False)
             self.stop_button.setHidden(False)
             flag = self.cap.open(self.video_name)
+            self.frame_count = int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT))
+            self.frame_index = 1
             fps = max(self.cap.get(cv2.CAP_PROP_FPS) % 100, 0) or 30.0
             w = int(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH))
             h = int(self.cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
@@ -475,14 +476,16 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
     def show_video_frame(self):
         name_list = []
         flag, img = self.cap.read()
+
         if not flag:
+            self.frame_index = 1
+            self.on_stop()
             self.statusBar.showMessage("Dectection Complete")
         if img is not None:
             showimg = img
             with torch.no_grad():
                 dt = [0.0, 0.0, 0.0]
                 t1 = time_sync()
-                # Convert
                 # if mode == "Video":
                 img = letterbox(img, new_shape=self.img_size)[0]
                 img = img.transpose((2, 0, 1))[::-1]  # HWC to CHW, BGR to RGB
@@ -519,9 +522,16 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
                 )
                 dt[2] += time_sync() - t3
 
-                self.statusBar.showMessage(
-                    f"Average FPS Detected %.4f" % (1000 * (t3 - t2))
-                )
+                if self.input_mode.currentText() == "Video":
+                    self.statusBar.showMessage(
+                        f"Detecting Video: %.2f%%"
+                        % ((self.frame_index / self.frame_count) * 100)
+                    )
+                    self.frame_index = self.frame_index + 1
+                else:
+                    self.statusBar.showMessage(
+                        f"Average FPS Detected %.4f" % (1000 * (t3 - t2))
+                    )
                 self.statusBar.repaint()
                 # Process detections
                 annotator = Annotator(showimg, line_width=3, example=str(self.names))
