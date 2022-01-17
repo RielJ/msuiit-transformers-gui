@@ -23,23 +23,30 @@ $ cd transformers-gui
 # Optional: Create a python virtual environment
 $ python3 -m venv virtualenv
 $ source virtualenv/bin/activate
-$ ./virtualenv/bin/activate
+# ./virtualenv/bin/activate -> Windows
 
 # Install Packages.
 $ pip install -r requirements.txt
 ```
 
 </details>
+<details open>
+<summary>Adding Weights. (required)</summary>
+
+Application needs different models resided in `/weights/*` folder before it can run.
+
+
+</details>
 
 <details open>
 <summary>Running the application</summary>
 
-Detection using YOLOv5. Models automatically detected from the `/weights/*` folder.
+Detection using YOLOv5. 
 
 ```bash
 # Optional: If packages is installed in a virtual environment
 $ source virtualenv/bin/activate
-$ ./virtualenv/bin/activate
+# ./virtualenv/bin/activate -> Windows
 
 $ python main.py
 ```
