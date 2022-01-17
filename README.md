@@ -1,9 +1,5 @@
 <div align="center">
 
-<p>
-Description TODO
-</p>
-
 </div>
 
 ## <div align="center">Documentation</div>
