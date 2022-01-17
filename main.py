@@ -138,11 +138,15 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
                 "",
                 "Image (*.jpg *.jpeg *.png);;All Files(*)",
             )
+            if not saved_name[0]:
+                return
             os.rename(f"{ROOT}/prediction.jpg", saved_name[0])
         else:
             saved_name = QtWidgets.QFileDialog.getSaveFileName(
                 self, "Save Video Output", "", "Video (*.mp4 *avi);;All Files(*)"
             )
+            if not saved_name[0]:
+                return
             os.rename(f"{ROOT}/result.avi", saved_name[0])
         self.hide_all_buttons()
         self.detect_button.setHidden(False)
