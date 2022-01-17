@@ -8,7 +8,7 @@ Description TODO
 
 ## <div align="center">Documentation</div>
 
-TODO
+A GUI application for Distribution Line Detection. It detects Powerlines, Components (Transformer Tank, HV Bushing, LV Bushing, Arrester, Radiator Fins and Cutout Fuse) and Obstructions on a distribution line.
 
 ## <div align="center">Quick Start Examples</div>
 
