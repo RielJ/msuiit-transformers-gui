@@ -13,7 +13,7 @@ import ui_main
 from models.common import DetectMultiBackend
 from ui_tutorial import Ui_TutorialWindow
 from utils.augmentations import letterbox
-from utils.datasets import IMG_FORMATS, VID_FORMATS
+from utils.datasets import IMG_FORMATS, VID_FORMATS, LoadStreams
 from utils.general import check_img_size, non_max_suppression, scale_coords
 from utils.plots import Annotator
 from utils.torch_utils import select_device, time_sync
@@ -285,7 +285,7 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
             if self.video_name:
                 try:
                     self.cap.open(self.video_name)
-                    flag, _preview_image = self.cap.read()
+                    _, _preview_image = self.cap.read()
                     resized_image = self.resize_img(_preview_image)
                     if resized_image.isNull():
                         self.statusBar.showMessage("Failed to render preview image.")
@@ -321,7 +321,7 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
             [self.file_models[self.input_detection_model.currentIndex()].absolute()],
             device=self.device,
         )
-        stride, self.names, pt, jit, onnx, engine = (
+        stride, self.names, pt, _, _, engine = (
             self.model.stride,
             self.model.names,
             self.model.pt,
@@ -359,6 +359,7 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
                     30,
                     (int(self.cap.get(3)), int(self.cap.get(4))),
                 )
+                # self.model.warmup(imgsz=(1, 3, *self.imgsz), half=self.half)  # warmup
                 self.timer_video.start(60)
         elif mode == "Image":
             if not self.input_import.text().endswith(tuple(IMG_FORMATS)):
@@ -415,14 +416,14 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
                 )
                 self.statusBar.repaint()
                 annotator = Annotator(showimg, line_width=3, example=str(self.names))
-                for i, det in enumerate(pred):  # detections per image
+                for _, det in enumerate(pred):  # detections per image
                     if det is not None and len(det):
                         # Rescale boxes from img_size to im0 size
                         det[:, :4] = scale_coords(
                             img.shape[2:], det[:, :4], showimg.shape
                         ).round()
                         # Write results
-                        for idx, c in enumerate(det[:, -1].unique()):
+                        for _, c in enumerate(det[:, -1].unique()):
                             n = (det[:, -1] == c).sum()  # detections per class
 
                             getattr(
@@ -475,11 +476,19 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
                 fps,
                 (w, h),
             )
+            # self.model.warmup(imgsz=(1, 3, *self.imgsz), half=self.half)  # warmup
             self.timer_video.start(60)
 
     def show_video_frame(self):
         name_list = []
         flag, img = self.cap.read()
+        mode = self.input_mode.currentText()
+        # dataset = LoadStreams(
+        #     self.video_name if mode == "Video" else 0,
+        #     img_size=self.imgsz,
+        #     stride=self.stride,
+        #     auto=self.model.pt and not self.model.jit,
+        # )
 
         if not flag:
             self.frame_index = 1
@@ -491,8 +500,14 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
                 dt = [0.0, 0.0, 0.0]
                 t1 = time_sync()
                 # if mode == "Video":
-                img = letterbox(img, new_shape=self.img_size)[0]
-                img = img.transpose((2, 0, 1))[::-1]  # HWC to CHW, BGR to RGB
+                img = [
+                    letterbox(img, new_shape=self.img_size, stride=self.model.stride)[0]
+                ]
+                # img = img.transpose((2, 0, 1))[::-1]  # HWC to CHW, BGR to RGB
+                # Stack
+                img = np.stack(img, 0)
+
+                img = img[..., ::-1].transpose((0, 3, 1, 2))  # BGR to RGB, BHWC to BCHW
                 # else:
                 #     img = letterbox(img, new_shape=self.img_size)[0]
                 #     # img = np.stack(img, 0)
@@ -548,7 +563,7 @@ class TransformerApp(ui_main.Ui_MainWindow, QtWidgets.QMainWindow):
                         # Write results
                         for c in det[:, -1].unique():
                             n = (det[:, -1] == c).sum()  # detections per class
-                            s = f"{n} {self.names[int(c)]}{'s' * (n > 1)}, "  # add to string
+                            # s = f"{n} {self.names[int(c)]}{'s' * (n > 1)}, "  # add to string
                             # self.class_occurences[
                             #     self.names.index(self.names[int(c)])
                             # ].setText(n)
