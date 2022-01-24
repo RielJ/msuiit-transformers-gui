@@ -37,7 +37,7 @@ setuptools-scm==6.3.2
 six==1.16.0
 tensorboard==2.7.0
 tensorboard-data-server==0.6.1
-tensorboard-plugin-wit==1.8.0
+tensorboard-plugin-wit==1.8.1
 thop==0.0.31.post2005241907
 tomli==1.2.2
 torch==1.10.0
